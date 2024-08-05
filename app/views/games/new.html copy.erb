@@ -1,0 +1,13 @@
+<h1>New Game</h1>
+<p>Here are your random letters:</p>
+<ul>
+  <% @letters.each do |letter| %>
+    <li><%= letter %></li>
+  <% end %>
+</ul>
+
+<%= form_with url: '/score', method: :post do %>
+  <%= label_tag :word, "Enter a word:" %>
+  <%= text_field_tag :word %>
+  <%= submit_tag "Submit" %>
+<% end %>
